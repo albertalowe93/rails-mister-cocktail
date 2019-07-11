@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
   <div class="row">
     <div class="col-8 mx-auto">
       <h1><%= @cocktail.name  %></h1>
 
-      <h4>Ingredients: </h4>
+      <h3>Ingredients: </h3>
         <p><% @cocktail.doses.each do |dose| %></p>
         <%= dose.description %>
         <%= dose.ingredient.name %> <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }  %>
         <% end %>
 
-      <h1>New ingredients</h1>
+      <h4>Add new ingredients</h4>
         <%= simple_form_for [@cocktail, @dose] do |f| %>
         <%= f.association :ingredient %>
         <%= f.input :description %>
