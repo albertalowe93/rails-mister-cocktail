@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'json'
+require 'faker'
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = open(url).read
@@ -16,4 +17,14 @@ data['drinks'].each do |element|
     name: element['strIngredient1']
 )
   ingredient.save!
+end
+
+5.times do
+  cocktial = Cocktail.new(
+    name: Faker::TvShows::GameOfThrones.character,
+    image_url: "https://source.unsplash.com/?{KEYWORD},{KEYWORD}"
+    phone_number: Faker::IDNumber.valid,
+    category: Restaurant::CATEGORY.sample
+  )
+  restaurant.save!
 end
