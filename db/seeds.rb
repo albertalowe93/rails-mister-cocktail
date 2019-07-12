@@ -25,4 +25,13 @@ end
     image_url: "https://source.unsplash.com/random/?cocktails"
   )
   cocktail.save!
+
+  Ingredient.all.sample(3).each do |ingredient|
+    dose = Dose.new(
+      description: Faker::TvShows::GameOfThrones.character,
+      ingredient: ingredient,
+      cocktail: cocktail
+    )
+    dose.save!
+  end
 end
