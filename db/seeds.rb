@@ -20,11 +20,9 @@ data['drinks'].each do |element|
 end
 
 5.times do
-  cocktial = Cocktail.new(
+  cocktail = Cocktail.new(
     name: Faker::TvShows::GameOfThrones.character,
-    image_url: "https://source.unsplash.com/?{KEYWORD},{KEYWORD}"
-    phone_number: Faker::IDNumber.valid,
-    category: Restaurant::CATEGORY.sample
+    image_url: "https://source.unsplash.com/random/?cocktails"
   )
-  restaurant.save!
+  cocktail.save!
 end
