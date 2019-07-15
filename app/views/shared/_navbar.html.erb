@@ -1,5 +1,7 @@
 <nav class="navbar navbar-dark justify-content-between fixed-top" style="background-color: rgba(0,0,0,0.5);">
-    <%= link_to "Nicky Harrison", cocktails_path, class: "navbar-brand" %>
+    <%= link_to cocktails_path, class: "navbar-brand" do %>
+      <%= image_tag "logo1.jpg", width: 150, height: 50 %>
+    <% end %>
     <form class="form-inline">
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -22,7 +22,7 @@ end
 5.times do
   cocktail = Cocktail.new(
     name: Faker::TvShows::GameOfThrones.character,
-    image_url: "https://source.unsplash.com/random/?cocktails"
+    picture: "https://source.unsplash.com/random/?cocktails"
   )
   cocktail.save!
 
